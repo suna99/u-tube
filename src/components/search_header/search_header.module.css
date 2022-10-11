@@ -1,0 +1,131 @@
+.header{
+  width: 100vw;
+  height: 85px;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  background: #292929;
+  padding: 0 150px;
+}
+
+.title_wrap,
+.search_wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title{
+  margin-left: 14px;
+  color: white;
+  font-size: 28px;
+}
+
+.search_wrap{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+}
+
+.search_wrap .input{
+  width: 96%;
+  height: 44px;
+  border-radius: 100px;
+  padding-left: 20px;
+}
+
+.search_wrap .button::after{
+  content: '';
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  background-color: antiquewhite;
+  background: url(../../assets/images/search-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.search_wrap .button{
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-left: 8px;
+  border-radius: 100px;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.profile a{
+  display: block;
+  width: 44px;
+  height: 44px;
+  background: url(../../assets/images/user.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1200px){
+  .header{
+    padding: 0 90px;
+  }
+  
+  .title{
+    margin-left: 10px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .header{
+    padding: 0 60px;
+  }
+
+  .title{
+    font-size: 0;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .header{
+    padding: 0 30px;
+  }
+
+  .search_wrap{
+    width: 65%;
+  }
+
+  .search_wrap .input{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .header{
+    padding: 0 36px;
+  }
+
+  .profile{
+    display: none;
+  }
+
+  .search_wrap{
+    width: auto;
+    margin-right: 18px;
+  }
+
+  .search_wrap .input{
+    display: none;
+  }
+}

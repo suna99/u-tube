@@ -1,24 +1,28 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import styles from './app.module.css';
+import SearchHeader from './components/search_header/search_header';
 import VideoList from './components/video_list/video_list';
+import Utube from './service/utube';
 
-function App() {
+function App({ utube }) {
   const [videos, setVideos] = useState([]);
+  const search = query => {
+    utube
+      .search(query)
+      .then(videos => setVideos(videos));
+  }
 
   useEffect(() => {
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    };
-
-    fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyC10fo2eAPhX6RvU1ogKX7g5yiwQhrGE0g", requestOptions)
-      .then(response => response.json())
-      .then(result => setVideos(result.items))
-      .catch(error => console.log('error', error));
+    utube
+      .mostPopular()
+      .then(videos => setVideos(videos));
   }, []);
 
   return (
-    <VideoList videos={videos} />
+    <div className={styles.container}>
+      <SearchHeader onSearch={search} />
+      <VideoList videos={videos} />
+    </div>
   );
 }
 
