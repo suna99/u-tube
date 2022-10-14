@@ -86,6 +86,26 @@ button {
   padding:0 150px;
 }
 
+.search_header{
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content{
+  display: flex;
+  z-index: 1;
+}
+
+.detail{
+  flex: 1 1 70%;
+}
+
+.list{
+  flex: 1 1 30%;
+}
+
 @media screen and (max-width: 1200px){
   .container{
     padding: 0 90px;

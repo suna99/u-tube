@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './video_item.module.css';
 
-  const VideoItem = ({video:{snippet}}) => (
-      <li className={styles.video}>
+  const VideoItem = memo(
+    ({video,video:{snippet}, onVideoClick}) => (
+      <li className={styles.video} onClick={()=>onVideoClick(video)}>
         <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt="video thumbnail"/>
         <div className={styles.txt_wrap}>
           <p className={styles.title}>{snippet.title}</p>
@@ -18,6 +19,7 @@ import styles from './video_item.module.css';
           </div>
         </div>
       </li>
+    )
   );
 
 export default VideoItem;

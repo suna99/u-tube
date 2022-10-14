@@ -1,10 +1,7 @@
 .header{
   width: 100vw;
   height: 85px;
-  position: fixed;
   display: flex;
-  top: 0;
-  left: 0;
   justify-content: space-between;
   align-items: center;
   background: #292929;

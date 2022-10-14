@@ -1,0 +1,28 @@
+.container{
+  padding: 120px 0 100px 0;
+}
+
+.detail{
+  height: 100%;
+}
+
+.content_wrap{
+  padding: 20px 10px;
+}
+
+.title{
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.channel{
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #757575;
+}
+
+.desc{
+  white-space: pre-wrap;
+  font-size: 16px;
+}
